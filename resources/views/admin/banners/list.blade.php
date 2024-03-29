@@ -59,7 +59,7 @@
                     @endforeach
                   </tbody>
                 </table>
-                  {{$sliders->links()}}
+                  {{$banners->links()}}
             </div>
           </div>
         </div>
