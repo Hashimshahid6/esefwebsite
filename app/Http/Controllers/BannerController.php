@@ -28,16 +28,16 @@ class BannerController extends Controller
             'picture.max' => 'Image size should be less than 2MB',
         ]);
 
-        $slider = new SlidersModel();
-        $slider->title = trim($request->title);
-        $slider->description = trim($request->description);
+        $banner = new SlidersModel();
+        $banner->title = trim($request->title);
+        $banner->description = trim($request->description);
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/banners'), $imageName);
-            $slider->picture = 'uploads/banners/'.$imageName;
+            $banner->picture = 'uploads/banners/'.$imageName;
         }
-        $slider->created_by = Auth()->user()->id;
-        $slider->save();
+        $banner->created_by = Auth()->user()->id;
+        $banner->save();
         return redirect()->route('sliders.list')->with('success', 'Banner Created Successfully');
     }//
 
@@ -49,7 +49,7 @@ class BannerController extends Controller
         ], [
             'picture.max' => 'Image size should be less than 2MB',
         ]);
-        $banner = SlidersModel::find($id);
+        $banner = BannerModel::find($id);
         $banner->title = trim($request->title);
         $banner->description = trim($request->description);
         if($request->hasFile('picture')){
