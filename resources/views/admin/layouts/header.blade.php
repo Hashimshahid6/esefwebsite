@@ -65,10 +65,14 @@
               </li>
               <li class="nav-item">
                 <a href="{{route('sliders.list')}}" class="nav-link @if(Request::segment(2) == 'sliders') active @endif">
-                    <i class="nav-icon fas fa-sliders-h"></i>
-                  <p>
-                    Sliders
-                  </p>
+                  <i class="nav-icon fas fa-sliders-h"></i>
+                  <p>Sliders</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('bodmembers.list')}}" class="nav-link @if(Request::segment(2) == 'bodmembers') active @endif">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>BOD Members</p>
                 </a>
               </li>
               <li class="nav-item">

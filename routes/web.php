@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\permsrolesController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SlidersController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BODMembersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,12 +35,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/admin/admin/edit/{id}', [AdminController::class, 'update'])->name('admin.update');
     Route::get('/admin/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
 
-    Route::get('/admin/banners/list', [SlidersController::class, 'list'])->name('banners.list');
-    Route::get('/admin/banners/add', [SlidersController::class, 'add'])->name('banners.add');
-    Route::post('/admin/banners/add', [SlidersController::class, 'insert'])->name('banners.insert');
-    Route::get('/admin/banners/edit/{id}', [SlidersController::class, 'edit'])->name('banners.edit');
-    Route::post('/admin/banners/edit/{id}', [SlidersController::class, 'update'])->name('banners.update');
-    Route::get('/admin/banners/delete/{id}', [SlidersController::class, 'delete'])->name('banners.delete');
+    Route::get('/admin/banners/list', [BannerController::class, 'list'])->name('banners.list');
+    Route::get('/admin/banners/add', [BannerController::class, 'add'])->name('banners.add');
+    Route::post('/admin/banners/add', [BannerController::class, 'insert'])->name('banners.insert');
+    Route::get('/admin/banners/edit/{id}', [BannerController::class, 'edit'])->name('banners.edit');
+    Route::post('/admin/banners/edit/{id}', [BannerController::class, 'update'])->name('banners.update');
+    Route::get('/admin/banners/delete/{id}', [BannerController::class, 'delete'])->name('banners.delete');
 
     Route::get('/admin/sliders/list', [SlidersController::class, 'list'])->name('sliders.list');
     Route::get('/admin/sliders/add', [SlidersController::class, 'add'])->name('sliders.add');
@@ -46,6 +48,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/sliders/edit/{id}', [SlidersController::class, 'edit'])->name('sliders.edit');
     Route::post('/admin/sliders/edit/{id}', [SlidersController::class, 'update'])->name('sliders.update');
     Route::get('/admin/sliders/delete/{id}', [SlidersController::class, 'delete'])->name('sliders.delete');
+
+    Route::get('/admin/bodmembers/list', [BODMembersController::class, 'list'])->name('bodmembers.list');
+    Route::get('/admin/bodmembers/add', [BODMembersController::class, 'add'])->name('bodmembers.add');
+    Route::post('/admin/bodmembers/add', [BODMembersController::class, 'insert'])->name('bodmembers.insert');
+    Route::get('/admin/bodmembers/edit/{id}', [BODMembersController::class, 'edit'])->name('bodmembers.edit');
+    Route::post('/admin/bodmembers/edit/{id}', [BODMembersController::class, 'update'])->name('bodmembers.update');
+    Route::get('/admin/bodmembers/delete/{id}', [BODMembersController::class, 'delete'])->name('bodmembers.delete');
 });
 
 Route::prefix('perms_roles')->group(function () {
