@@ -35,7 +35,7 @@ class BODMembersController extends Controller
         $bodmember = new BODMembersModel();
         $bodmember->member_name = trim($request->member_name);
         $bodmember->member_designation = trim($request->member_designation);
-        $bodmember->member_details = trim($request->member_details);
+        $bodmember->member_details = strip_tags(trim($request->member_details));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->member_picture->extension();  
             $request->member_picture->move(public_path('uploads/bod_members'), $imageName);
@@ -60,7 +60,7 @@ class BODMembersController extends Controller
         $bodmember = BODMembersModel::find($id);
         $bodmember->member_name = trim($request->member_name);
         $bodmember->member_designation = trim($request->member_designation);
-        $bodmember->member_details = trim($request->member_details);
+        $bodmember->member_details = strip_tags(trim($request->member_details));
         if($request->hasFile('member_picture')){
             $imageName = time().'.'.$request->member_picture->extension();  
             $request->member_picture->move(public_path('uploads/bod_members'), $imageName);

@@ -8,6 +8,7 @@ use App\Http\Controllers\SlidersController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BODMembersController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ServicesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +64,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
     Route::post('/admin/gallery/edit/{id}', [GalleryController::class, 'update'])->name('gallery.update');
     Route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete'])->name('gallery.delete');
+
+    Route::get('/admin/services/list', [ServicesController::class, 'list'])->name('services.list');
+    Route::get('/admin/services/add', [ServicesController::class, 'add'])->name('services.add');
+    Route::post('/admin/services/add', [ServicesController::class, 'insert'])->name('services.insert');
+    Route::get('/admin/services/edit/{id}', [ServicesController::class, 'edit'])->name('services.edit');
+    Route::post('/admin/services/edit/{id}', [ServicesController::class, 'update'])->name('services.update');
+    Route::get('/admin/services/delete/{id}', [ServicesController::class, 'delete'])->name('services.delete');
 });
 
 Route::prefix('perms_roles')->group(function () {

@@ -32,7 +32,7 @@ class BannerController extends Controller
 
         $banner = new BannerModel();
         $banner->title = trim($request->title);
-        $banner->description = trim($request->description);
+        $banner->description = strip_tags(trim($request->description));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/banners'), $imageName);
@@ -53,7 +53,7 @@ class BannerController extends Controller
         ]);
         $banner = BannerModel::find($id);
         $banner->title = trim($request->title);
-        $banner->description = trim($request->description);
+        $banner->description = strip_tags(trim($request->description));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/banners'), $imageName);

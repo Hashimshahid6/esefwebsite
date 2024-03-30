@@ -82,6 +82,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('services.list')}}" class="nav-link @if(Request::segment(2) == 'services') active @endif">
+                    <i class="nav-icon fas fa-image"></i>
+                  <p>Services</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('admin.logout')}}" class="nav-link">
                   <i class="nav-icon fas fa-sign-out-alt"></i>
                   <p>Logout</p>

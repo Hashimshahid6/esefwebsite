@@ -25,8 +25,11 @@ class PlainText implements Rule
      */
     public function passes($attribute, $value)
     {
-        // This regex checks if the value contains only plain text (letters, numbers, spaces, punctuation)
-        return preg_match('/^[\pL\pN\s.,!?;:()-]*$/u', $value);
+        // Strip HTML and PHP tags from the input
+        $sanitizedValue = strip_tags($value);
+
+        // This regex checks if the sanitized value contains only plain text (letters, numbers, spaces, punctuation), excluding the "&" character
+        return preg_match('/^[\pL\pN\s.&,!?;:()-]*$/u', $sanitizedValue);
     }
 
     /**

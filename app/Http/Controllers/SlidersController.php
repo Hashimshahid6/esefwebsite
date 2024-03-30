@@ -32,7 +32,7 @@ class SlidersController extends Controller
 
         $slider = new SlidersModel();
         $slider->title = trim($request->title);
-        $slider->description = trim($request->description);
+        $slider->description = strip_tags(trim($request->description));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/sliders'), $imageName);
@@ -53,7 +53,7 @@ class SlidersController extends Controller
         ]);
         $slider = SlidersModel::find($id);
         $slider->title = trim($request->title);
-        $slider->description = trim($request->description);
+        $slider->description = strip_tags(trim($request->description));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/sliders'), $imageName);
