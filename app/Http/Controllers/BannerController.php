@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BannerModel;
+use App\Rules\PlainText;
 
 class BannerController extends Controller
 {
@@ -22,14 +23,14 @@ class BannerController extends Controller
     public function insert(Request $request)
     {
         request()->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'title' => ['required', 'string', new PlainText],
+            'description' => ['required', 'string', new PlainText],
             'picture' => 'required|image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'picture.max' => 'Image size should be less than 2MB',
         ]);
 
-        $banner = new SlidersModel();
+        $banner = new BannerModel();
         $banner->title = trim($request->title);
         $banner->description = trim($request->description);
         if($request->hasFile('picture')){
@@ -39,13 +40,13 @@ class BannerController extends Controller
         }
         $banner->created_by = Auth()->user()->id;
         $banner->save();
-        return redirect()->route('sliders.list')->with('success', 'Banner Created Successfully');
+        return redirect()->route('banners.list')->with('success', 'Banner Created Successfully');
     }//
 
     public function update($id, Request $request){
         request()->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'title' => ['required', 'string', new PlainText],
+            'description' => ['required', 'string', new PlainText],
             'picture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'picture.max' => 'Image size should be less than 2MB',
@@ -59,10 +60,9 @@ class BannerController extends Controller
             $banner->picture = 'uploads/banners/'.$imageName;
         }
         $banner->status = $request->status;
-        $banner->created_by = Auth()->user()->id;
         $banner->save();
 
-        return redirect()->route('sliders.list')->with('success', 'Banner Successfully Updated');
+        return redirect()->route('banners.list')->with('success', 'Banner Successfully Updated');
     }//
 
     public function edit($id)

@@ -6,10 +6,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add New Slider</h1>
+            <h1>Add New Image to Gallery</h1>
           </div>
           <div class="col-sm-6" style="text-align: right">
-            <a href="{{route('sliders.list')}}" class="btn btn-primary">Back</a>
+            <a href="{{route('gallery.list')}}" class="btn btn-primary">Back</a>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Add New Slider</h3>
+                            <h3 class="card-title">Add New Image to Gallery</h3>
                         </div>
                         <form method="post" action="" enctype="multipart/form-data">
                             @csrf
@@ -30,12 +30,6 @@
                                     <label>Title <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="title" value="{{old('title')}}" name="title" placeholder="Enter Your Title">
                                     <p class="text-danger">{{ $errors->first('title') }}</p>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label>Description <span class="text-danger">*</span></label>
-                                    <textarea class="form-control editor" name="description" id="description">{{old('description')}}</textarea>
-                                    <p class="text-danger">{{ $errors->first('description') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Image <span class="text-danger">*</span></label>

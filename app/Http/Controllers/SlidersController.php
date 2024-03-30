@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SlidersModel;
+use App\Rules\PlainText;
 
 class SlidersController extends Controller
 {
@@ -22,8 +23,8 @@ class SlidersController extends Controller
     public function insert(Request $request)
     {
         request()->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'title' => ['required', 'string', new PlainText],
+            'description' => ['required', 'string', new PlainText],
             'picture' => 'required|image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'picture.max' => 'Image size should be less than 2MB',
@@ -44,8 +45,8 @@ class SlidersController extends Controller
 
     public function update($id, Request $request){
         request()->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'title' => ['required', 'string', new PlainText],
+            'description' => ['required', 'string', new PlainText],
             'picture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'picture.max' => 'Image size should be less than 2MB',
@@ -59,7 +60,6 @@ class SlidersController extends Controller
             $slider->picture = 'uploads/sliders/'.$imageName;
         }
         $slider->status = $request->status;
-        $slider->created_by = Auth()->user()->id;
         $slider->save();
 
         return redirect()->route('sliders.list')->with('success', 'Slider Successfully Updated');

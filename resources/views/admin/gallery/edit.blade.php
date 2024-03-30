@@ -6,10 +6,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add New Slider</h1>
+            <h1>Edit Gallery Details</h1>
           </div>
           <div class="col-sm-6" style="text-align: right">
-            <a href="{{route('sliders.list')}}" class="btn btn-primary">Back</a>
+            <a href="{{route('gallery.list')}}" class="btn btn-primary">Back</a>
           </div>
         </div>
       </div>
@@ -21,30 +21,34 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Add New Slider</h3>
+                            <h3 class="card-title">Edit Gallery</h3>
                         </div>
                         <form method="post" action="" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label>Title <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="title" value="{{old('title')}}" name="title" placeholder="Enter Your Title">
+                                    <label>Title</label>
+                                    <input type="text" class="form-control" value="{{old('title', $gallery->title)}}" id="title"  name="title" placeholder="Enter Your Title">
                                     <p class="text-danger">{{ $errors->first('title') }}</p>
                                 </div>
-                                
                                 <div class="form-group">
-                                    <label>Description <span class="text-danger">*</span></label>
-                                    <textarea class="form-control editor" name="description" id="description">{{old('description')}}</textarea>
-                                    <p class="text-danger">{{ $errors->first('description') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label>Image <span class="text-danger">*</span></label>
+                                    <label>Image</label>
                                     <input type="file" class="form-control" id="picture" name="picture">
                                     @if ($errors->has('picture'))
                                     <p class="text-danger">{{ $errors->first('picture') }}</p>
                                     @else
                                     <p class="text-danger">Only JPEG, PNG, and JPG files are allowed to upload.</p>
                                     @endif
+                                    @if($gallery->picture)
+                                        <img src="{{ asset($gallery->picture) }}" alt="Slider Image" style="width: 150px; height: 100px;">
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select class="form-control" name="status" id="status">
+                                        <option {{(old('status', $gallery->status ) == 1) ? 'selected' : ''}} value="1">Active</option>
+                                        <option {{(old('status', $gallery->status) == 0) ? 'selected' : ''}} value="0">Inactive</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="card-footer">

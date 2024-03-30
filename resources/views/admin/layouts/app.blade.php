@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('assets/admin/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/admin/plugins/summernote/summernote-bs4.min.css')}}">
 </head>
 <!--
 `body` tag options:
@@ -46,5 +47,12 @@
 <script src="{{asset('assets/admin/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('assets/admin/dist/js/pages/dashboard3.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script>
+    $(function () {
+        $('.editor').summernote({
+        })
+    })
+</script>
 </body>
 </html>

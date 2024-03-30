@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Description <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="description" value="{{old('description')}}" name="description" placeholder="Enter Your Description">
+                                    <textarea class="form-control editor" name="description" id="description">{{old('description')}}</textarea>
                                     <p class="text-danger">{{ $errors->first('description') }}</p>
                                 </div>
                                 <div class="form-group">

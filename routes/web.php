@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SlidersController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BODMembersController;
+use App\Http\Controllers\GalleryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,6 +56,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/bodmembers/edit/{id}', [BODMembersController::class, 'edit'])->name('bodmembers.edit');
     Route::post('/admin/bodmembers/edit/{id}', [BODMembersController::class, 'update'])->name('bodmembers.update');
     Route::get('/admin/bodmembers/delete/{id}', [BODMembersController::class, 'delete'])->name('bodmembers.delete');
+
+    Route::get('/admin/gallery/list', [GalleryController::class, 'list'])->name('gallery.list');
+    Route::get('/admin/gallery/add', [GalleryController::class, 'add'])->name('gallery.add');
+    Route::post('/admin/gallery/add', [GalleryController::class, 'insert'])->name('gallery.insert');
+    Route::get('/admin/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
+    Route::post('/admin/gallery/edit/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete'])->name('gallery.delete');
 });
 
 Route::prefix('perms_roles')->group(function () {

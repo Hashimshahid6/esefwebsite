@@ -76,6 +76,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('gallery.list')}}" class="nav-link @if(Request::segment(2) == 'gallery') active @endif">
+                  <i class="nav-icon fas fa-image"></i>
+                  <p>Gallery</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('admin.logout')}}" class="nav-link">
                   <i class="nav-icon fas fa-sign-out-alt"></i>
                   <p>Logout</p>
