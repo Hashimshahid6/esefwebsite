@@ -88,6 +88,18 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('news.list')}}" class="nav-link @if(Request::segment(2) == 'news') active @endif">
+                    <i class="nav-icon fas fa-newspaper"></i>
+                  <p>News & Updates</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('messages.list')}}" class="nav-link @if(Request::segment(2) == 'messages') active @endif">
+                    <i class="nav-icon fas fa-envelope"></i>
+                  <p>Messages</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('admin.logout')}}" class="nav-link">
                   <i class="nav-icon fas fa-sign-out-alt"></i>
                   <p>Logout</p>

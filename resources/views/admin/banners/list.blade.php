@@ -50,7 +50,7 @@
                           <a href="{{route('banners.edit', $banner->id)}}" class="btn btn-sm btn-primary">
                             <i class="fas fa-edit"></i>
                           </a>
-                          <a href="{{route('banners.delete', $banner->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Slider?');">
+                          <a href="{{route('banners.delete', $banner->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Banner?');">
                             <i class="fas fa-trash"></i>
                           </a>
                         </div>

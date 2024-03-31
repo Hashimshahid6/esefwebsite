@@ -50,7 +50,7 @@
                           <a href="{{route('services.edit', $service->id)}}" class="btn btn-sm btn-primary">
                             <i class="fas fa-edit"></i>
                           </a>
-                          <a href="{{route('services.delete', $service->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Slider?');">
+                          <a href="{{route('services.delete', $service->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Service?');">
                             <i class="fas fa-trash"></i>
                           </a>
                         </div>

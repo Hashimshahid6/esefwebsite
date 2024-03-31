@@ -9,6 +9,8 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BODMembersController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\MessagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,6 +73,20 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/services/edit/{id}', [ServicesController::class, 'edit'])->name('services.edit');
     Route::post('/admin/services/edit/{id}', [ServicesController::class, 'update'])->name('services.update');
     Route::get('/admin/services/delete/{id}', [ServicesController::class, 'delete'])->name('services.delete');
+
+    Route::get('/admin/news/list', [NewsController::class, 'list'])->name('news.list');
+    Route::get('/admin/news/add', [NewsController::class, 'add'])->name('news.add');
+    Route::post('/admin/news/add', [NewsController::class, 'insert'])->name('news.insert');
+    Route::get('/admin/news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::post('/admin/news/edit/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::get('/admin/news/delete/{id}', [NewsController::class, 'delete'])->name('news.delete');
+
+    Route::get('/admin/messages/list', [MessagesController::class, 'list'])->name('messages.list');
+    Route::get('/admin/messages/add', [MessagesController::class, 'add'])->name('messages.add');
+    Route::post('/admin/messages/add', [MessagesController::class, 'insert'])->name('messages.insert');
+    Route::get('/admin/messages/edit/{id}', [MessagesController::class, 'edit'])->name('messages.edit');
+    Route::post('/admin/messages/edit/{id}', [MessagesController::class, 'update'])->name('messages.update');
+    Route::get('/admin/messages/delete/{id}', [MessagesController::class, 'delete'])->name('messages.delete');
 });
 
 Route::prefix('perms_roles')->group(function () {

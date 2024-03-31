@@ -4,7 +4,7 @@
     <div class="logo">
       <h1 class="text-light"><a href="index.html"><span></span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html"><img width="400" height="600"src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <a href="index.html"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>
     </div>
     <nav id="navbar" class="navbar">
       <ul>
@@ -18,7 +18,6 @@
         </li>
         <li class="dropdown"><a href="schemes.html"><span>Schemes</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-      
             <li><a href="gcs.html">Girls Community School (GCS)</a></li>
             <li><a href="ess.html">Education Support Scheme (ESS)</a></li>
             <li><a href="nsi.html">New Schools Initiative (NSI)</a></li>

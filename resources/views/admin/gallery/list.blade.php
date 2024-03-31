@@ -48,7 +48,7 @@
                           <a href="{{route('gallery.edit', $gallery->id)}}" class="btn btn-sm btn-primary">
                             <i class="fas fa-edit"></i>
                           </a>
-                          <a href="{{route('gallery.delete', $gallery->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Slider?');">
+                          <a href="{{route('gallery.delete', $gallery->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Gallery Image?');">
                             <i class="fas fa-trash"></i>
                           </a>
                         </div>
