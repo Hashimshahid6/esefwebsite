@@ -11,8 +11,8 @@
         <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
         <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="about.html">Introduction</a></li>
-            <li><a href="objectives.html">Objectives</a></li>
+            <li><a href="{{route('about')}}">Introduction</a></li>
+            <li><a href="{{route('objectives')}}">Objectives</a></li>
             <li><a href="bod.html">Board of Directors</a></li>
           </ul>
         </li>

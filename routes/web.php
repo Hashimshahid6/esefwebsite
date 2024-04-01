@@ -11,6 +11,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +23,9 @@ use App\Http\Controllers\MessagesController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about_us', [HomeController::class, 'about'])->name('about');
+Route::get('/objectives', [HomeController::class, 'objectives'])->name('objectives');
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');

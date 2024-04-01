@@ -15,6 +15,6 @@ class BannerModel extends Model
         ->join('users', 'banners.created_by', '=', 'users.id')
         ->where('banners.status', '=', 1)
         ->orderBy('banners.id', 'desc')
-        ->paginate(3);
+        ->paginate(10);
     }
 }

@@ -503,7 +503,7 @@ h6 {
 
 .slides{
   width: 500%;
-  height: 500px;
+  height: 450px;
   display: flex;
 }
 
@@ -931,6 +931,20 @@ section {
   color: #67b0d1;
   margin-bottom: 10px;
 }
+.about img {
+  width: 600px;
+  height: 600px;
+}
+.about .icon-boxes .icon-box img {
+  width: 300px;
+  height: 300px;
+}
+.about p{
+  font-size: 20px;
+}
+/* .about .content p{
+  font-size: 20px;
+} */
 
 .about .icon-boxes .icon-box h4 {
   font-size: 20px;
@@ -950,8 +964,24 @@ section {
 }
 
 @media (max-width: 768px) {
-  .about {
+  .about .content {
     text-align: center;
+    padding: 0px 10px;
+  }
+  .about .container {
+    padding: 0px;
+  }
+  .about img {
+    width: 400px;
+    height: 400px;
+  }
+  .about p{
+    font-size: 16px;
+    padding: 0px 10px;
+  }
+  .about .icon-boxes .icon-box img {
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -1055,7 +1085,7 @@ section {
   font-size: 18px;
 }
 
-.services .title a {
+.services .title a, .services .description p {
   color: #111;
 }
 
@@ -1066,12 +1096,12 @@ section {
 }
 
 .services .icon-box:hover .title a,
-.services .icon-box:hover .description {
+.services .icon-box:hover .description p {
   color: #fff;
 }
 
-.services .icon-box:hover .icon i {
-  color: #fff;
+.services .icon-box:hover .icon img {
+  filter: brightness(0) invert(1);
 }
 
 /*--------------------------------------------------------------

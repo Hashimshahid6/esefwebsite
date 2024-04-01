@@ -25,14 +25,14 @@ class BannerController extends Controller
         request()->validate([
             'title' => ['required', 'string', new PlainText],
             'description' => ['required', 'string', new PlainText],
-            'picture' => 'required|image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:4048',
         ], [
-            'picture.max' => 'Image size should be less than 2MB',
+            'picture.max' => 'Image size should be less than 4MB',
         ]);
 
         $banner = new BannerModel();
         $banner->title = trim($request->title);
-        $banner->description = strip_tags(trim($request->description));
+        $banner->description = trim($request->description);
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/banners'), $imageName);
@@ -47,13 +47,13 @@ class BannerController extends Controller
         request()->validate([
             'title' => ['required', 'string', new PlainText],
             'description' => ['required', 'string', new PlainText],
-            'picture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
+            'picture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:4048',
         ], [
-            'picture.max' => 'Image size should be less than 2MB',
+            'picture.max' => 'Image size should be less than 4MB',
         ]);
         $banner = BannerModel::find($id);
         $banner->title = trim($request->title);
-        $banner->description = strip_tags(trim($request->description));
+        $banner->description = trim($request->description);
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/banners'), $imageName);

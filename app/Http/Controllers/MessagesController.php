@@ -25,7 +25,7 @@ class MessagesController extends Controller
         request()->validate([
             'name' => ['required', 'string', new PlainText],
             'designation' => ['required', 'string', new PlainText],
-            'details' => ['required', 'string', new PlainText],
+            'description' => 'required|string',
             'picture' => 'required|image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
             'twitter_link' => 'nullable|url',
             'facebook_link' => 'nullable|url',
@@ -38,7 +38,7 @@ class MessagesController extends Controller
         $message = new MessagesModel();
         $message->name = trim($request->name);
         $message->designation = trim($request->designation);
-        $message->description = strip_tags(trim($request->description));
+        $message->description = trim($request->description);
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/messages'), $imageName);
@@ -57,7 +57,7 @@ class MessagesController extends Controller
         request()->validate([
             'name' => ['required', 'string', new PlainText],
             'designation' => ['required', 'string', new PlainText],
-            'description' => ['required', 'string', new PlainText],
+            'description' => 'required|string',
             'picture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
             'twitter_link' => 'nullable|url',
             'facebook_link' => 'nullable|url',

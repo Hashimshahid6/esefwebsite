@@ -41,7 +41,7 @@
                     <tr>
                       <td> {{$banner->id}} </td>
                       <td> {{$banner->title}} </td>
-                      <td> {{$banner->description}} </td>
+                      <td> {!! $banner->description !!} </td>
                       <td> <img src="{{asset($banner->picture)}}" alt="{{$banner->title}}" style="width: 150px; height: 100px;"> </td>
                       <td> {{$banner->created_by_name}} </td>
                       <td> {{($banner->status == 1) ? 'Active' : 'Inactive'}} </td>

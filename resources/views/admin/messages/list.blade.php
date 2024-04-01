@@ -48,7 +48,7 @@
                         <td> {{$message->id}} </td>
                         <td> {{$message->name}} </td>
                         <td> {{$message->designation}} </td>
-                        <td> {{$message->description}} </td>
+                        <td> {!! $message->description !!} </td>
                         <td> <img src="{{asset($message->picture)}}" alt="{{$message->name}}" style="width: 50px; height: 50px;"> </td>
                         <td> {{$message->twitter_link}} </td>
                         <td> {{$message->facebook_link}} </td>

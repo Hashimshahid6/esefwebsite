@@ -14,7 +14,7 @@ class MessagesModel extends Model
         return self::select('messages.*', 'users.name as created_by_name')
         ->join('users', 'messages.created_by', '=', 'users.id')
         ->where('messages.status', '=', 1)
-        ->orderBy('messages.id', 'desc')
+        ->orderBy('messages.id', 'asc')
         ->paginate(3);
     }
 }

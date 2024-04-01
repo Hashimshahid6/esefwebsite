@@ -24,7 +24,7 @@ class ServicesController extends Controller
     {
         request()->validate([
             'title' => ['required', 'string', new PlainText],
-            'description' => ['required', 'string', new PlainText],
+            'description' => 'required|string',
             'icon' => 'required|image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'icon.max' => 'Image size should be less than 2MB',
@@ -46,7 +46,7 @@ class ServicesController extends Controller
     public function update($id, Request $request){
         request()->validate([
             'title' => ['required', 'string', new PlainText],
-            'description' => ['required', 'string', new PlainText],
+            'description' => 'required|string',
             'icon' => 'image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'icon.max' => 'Image size should be less than 2MB',
