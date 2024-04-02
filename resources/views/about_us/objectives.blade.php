@@ -3,7 +3,6 @@
   <!-- ======= Header ======= -->
   @include('components.navbar')
   <!-- End Header -->
-  
   <main id="main">
     <!-- ======= Objectives Section ======= -->
     <section id="about" class="about">
@@ -23,16 +22,16 @@
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
                             <div class="col-md-6 col-6 icon-box" data-aos="fade-right" data-aos-delay="100">
-                                <img src="assets/img/obj1.png"/>
+                                <img src="{{asset('assets/img/obj1.png')}}"/>
                             </div>
                             <div class="col-md-6 col-6 icon-box" data-aos="fade-left" data-aos-delay="200">
-                                <img src="assets/img/obj2.png"/>
+                                <img src="{{asset('assets/img/obj2.png')}}"/>
                             </div>
                             <div class="col-md-6 col-6 icon-box" data-aos="fade-right" data-aos-delay="300">
-                                <img src="assets/img/obj3.png"/>
+                                <img src="{{asset('assets/img/obj3.png')}}">
                             </div>
                             <div class="col-md-6 col-6 icon-box" data-aos="fade-left" data-aos-delay="400">
-                                <img src="assets/img/obj4.png"/>
+                                <img src="{{asset('assets/img/obj4.png')}}"/>
                             </div>
                         </div>
                     </div><!-- End .content-->

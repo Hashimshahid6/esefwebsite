@@ -14,7 +14,7 @@ class BannerModel extends Model
         return self::select('banners.*', 'users.name as created_by_name')
         ->join('users', 'banners.created_by', '=', 'users.id')
         ->where('banners.status', '=', 1)
-        ->orderBy('banners.id', 'desc')
+        ->orderBy('banners.id', 'asc')
         ->paginate(10);
     }
 }

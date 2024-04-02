@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\permsrolesController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\SlidersController;
-use App\Http\Controllers\BannerController;
-use App\Http\Controllers\BODMembersController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\permsrolesController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SlidersController;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BODMembersController;
+use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\ServicesController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +24,13 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about_us', [HomeController::class, 'about'])->name('about');
-Route::get('/objectives', [HomeController::class, 'objectives'])->name('objectives');
+
+Route::get('/about_us/about', [HomeController::class, 'about'])->name('about');
+Route::get('/about_us/objectives', [HomeController::class, 'objectives'])->name('objectives');
+Route::get('/about_us/bod_members', [HomeController::class, 'bod_members'])->name('bod_members');
+
+Route::get('/schemes', [HomeController::class, 'schemes'])->name('schemes');
+
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');

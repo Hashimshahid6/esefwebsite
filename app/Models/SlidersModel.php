@@ -14,7 +14,7 @@ class SlidersModel extends Model
         return self::select('movable_sliders.*', 'users.name as created_by_name')
         ->join('users', 'movable_sliders.created_by', '=', 'users.id')
         ->where('movable_sliders.status', '=', 1)
-        ->orderBy('movable_sliders.id', 'desc')
-        ->paginate(3);
+        ->orderBy('movable_sliders.id', 'asc')
+        ->paginate(10);
     }
 }

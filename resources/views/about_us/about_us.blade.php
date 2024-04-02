@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-6" data-aos="fade-left" data-aos-delay="100">
-            <img src="assets/img/about_us_banner.png"/>
+            <img src="{{asset('assets/img/about_us_banner.png')}}"/>
           </div>
         </div>
       </div>

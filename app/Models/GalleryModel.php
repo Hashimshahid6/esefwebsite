@@ -14,7 +14,7 @@ class GalleryModel extends Model
         return self::select('gallaries.*', 'users.name as created_by_name')
         ->join('users', 'gallaries.created_by', '=', 'users.id')
         ->where('gallaries.status', '=', 1)
-        ->orderBy('gallaries.id', 'desc')
-        ->paginate(3);
+        ->orderBy('gallaries.id', 'asc')
+        ->paginate(10);
     }
 }

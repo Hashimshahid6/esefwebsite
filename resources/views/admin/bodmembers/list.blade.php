@@ -44,7 +44,7 @@
                       <td> {{$bodmember->id}} </td>
                       <td> {{$bodmember->member_name}} </td>
                       <td> {{$bodmember->member_designation}} </td>
-                      <td> {{$bodmember->member_details}} </td>
+                      <td> {!! $bodmember->member_details !!} </td>
                       <td> <img src="{{asset($bodmember->member_picture)}}" alt="{{$bodmember->member_name}}" style="width: 50px; height: 50px;"> </td>
                       <td> {{$bodmember->picture_sequence}} </td>
                       <td> {{$bodmember->created_by_name}} </td>

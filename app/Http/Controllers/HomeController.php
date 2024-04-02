@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\BannerModel;
 use App\Models\MessagesModel;
 use App\Models\ServicesModel;
+use App\Models\BODMembersModel;
 
 class HomeController extends Controller
 {
@@ -19,11 +20,28 @@ class HomeController extends Controller
 
     public function about(){
         $data['heade_title'] = 'About Us';
-        return view('about_us', $data);
+        return view('about_us.about_us', $data);
     }//
 
     public function objectives(){
         $data['heade_title'] = 'Objectives';
-        return view('objectives', $data);
+        return view('about_us.objectives', $data);
+    }//
+
+    public function bod_members(){
+        $data['heade_title'] = 'BOD Members';
+        $data['bodMembers'] = BODMembersModel::getBODMembers();
+        return view('about_us.bod_members', $data);
+    }//
+
+    public function schemes(){
+        $data['heade_title'] = 'Schemes';
+        $data['services'] = ServicesModel::getServices();
+        return view('schemes.schemes', $data);
+    }//
+
+    public function gcs(){
+        $data['heade_title'] = 'GCS';
+        return view('schemes.gcs', $data);
     }//
 }

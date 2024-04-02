@@ -14,7 +14,7 @@ class ServicesModel extends Model
         return self::select('services.*', 'users.name as created_by_name')
         ->join('users', 'services.created_by', '=', 'users.id')
         ->where('services.status', '=', 1)
-        ->orderBy('services.id', 'desc')
-        ->paginate(3);
+        ->orderBy('services.id', 'asc')
+        ->paginate(10);
     }
 }
