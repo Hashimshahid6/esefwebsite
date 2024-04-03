@@ -44,4 +44,19 @@ class HomeController extends Controller
         $data['heade_title'] = 'GCS';
         return view('schemes.gcs', $data);
     }//
+
+    public function ess(){
+        $data['heade_title'] = 'ESS';
+        return view('schemes.ess', $data);
+    }//
+
+    public function nsi(){
+        $data['heade_title'] = 'NSI';
+        return view('schemes.nsi', $data);
+    }//
+
+    public function social_media(){
+        $data['heade_title'] = 'Social Media';
+        return view('media.social_media', $data);
+    }//
 }

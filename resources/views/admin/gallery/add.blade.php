@@ -27,7 +27,7 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label>Title <span class="text-danger">*</span></label>
+                                    <label>Title </label>
                                     <input type="text" class="form-control" id="title" value="{{old('title')}}" name="title" placeholder="Enter Your Title">
                                     <p class="text-danger">{{ $errors->first('title') }}</p>
                                 </div>

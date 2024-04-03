@@ -30,6 +30,11 @@ Route::get('/about_us/objectives', [HomeController::class, 'objectives'])->name(
 Route::get('/about_us/bod_members', [HomeController::class, 'bod_members'])->name('bod_members');
 
 Route::get('/schemes', [HomeController::class, 'schemes'])->name('schemes');
+Route::get('/schemes/gcs', [HomeController::class, 'gcs'])->name('gcs');
+Route::get('/schemes/ess', [HomeController::class, 'ess'])->name('ess');
+Route::get('/schemes/nsi', [HomeController::class, 'nsi'])->name('nsi');
+
+Route::get('/media/social_media', [HomeController::class, 'social_media'])->name('social_media');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');

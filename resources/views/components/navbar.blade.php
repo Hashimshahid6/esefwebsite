@@ -18,14 +18,14 @@
         </li>
         <li class="dropdown"><a href="{{route('schemes')}}"><span>Schemes</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="gcs.html">Girls Community School (GCS)</a></li>
-            <li><a href="ess.html">Education Support Scheme (ESS)</a></li>
-            <li><a href="nsi.html">New Schools Initiative (NSI)</a></li>
+            <li><a href="{{route('gcs')}}">Girls Community School (GCS)</a></li>
+            <li><a href="{{route('ess')}}">Education Support Scheme (ESS)</a></li>
+            <li><a href="{{route('nsi')}}">New Schools Initiative (NSI)</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="#portfolio"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a href="{{route('social_media')}}"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="sm.html">Social Media</a></li>
+            <li><a href="{{route('social_media')}}">Social Media</a></li>
             <li><a href="news_and_updates.html">News & Updates</a></li>
             <li><a href="gallery.html">Gallery</a></li>
           </ul>

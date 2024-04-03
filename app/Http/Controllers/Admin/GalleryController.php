@@ -24,7 +24,7 @@ class GalleryController extends Controller
     public function insert(Request $request)
     {
         request()->validate([
-            'title' => ['required', 'string', new PlainText],
+            'title' => new PlainText,
             'picture' => 'required|image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'picture.max' => 'Image size should be less than 2MB',
@@ -44,7 +44,7 @@ class GalleryController extends Controller
 
     public function update($id, Request $request){
         request()->validate([
-            'title' => ['required', 'string', new PlainText],
+            'title' => new PlainText,
             'picture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,JPEG|max:2048',
         ], [
             'picture.max' => 'Image size should be less than 2MB',

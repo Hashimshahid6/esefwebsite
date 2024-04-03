@@ -624,7 +624,8 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding-top: 40px;
+  padding-bottom: 70px;
   overflow: hidden;
 }
 
@@ -634,14 +635,14 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #2f4d5a;
   z-index: 2;
 }
@@ -666,26 +667,26 @@ section {
 # Features
 --------------------------------------------------------------*/
 .features {
-  padding-top: 0px;
+  padding-top: 50px;
 }
 .features .icon-box {
-  /* display: flex; */
-  align-items: center;
   padding: 20px;
   transition: 0.3s;
   border: 1px solid #eef0ef;
+  box-shadow: 0 2px 4px rgba(136, 136, 136, 0.1); /* Added box shadow */
+  margin-bottom: 30px;
+  border-radius: 5px;
 }
 .features .icon-box i {
-  font-size: 32px;
-  padding-right: 10px;
+  font-size: 36px;
   line-height: 1;
+  color: #ffbb2c;
 }
 .features .icon-box h3 {
   font-weight: 700;
-  margin: 0;
-  padding: 0;
   line-height: 1;
   font-size: 16px;
+  margin-top: 10px;
 }
 .features .icon-box h3 a {
   color: #37423b;
@@ -866,7 +867,10 @@ section {
 .about {
   background: url("../img/about-bg.jpg") center center no-repeat;
   background-size: cover;
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   position: relative;
 }
 
@@ -933,7 +937,9 @@ section {
 }
 .about img {
   width: 600px;
-  height: 600px;
+  height: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .about .icon-boxes .icon-box img {
   width: 300px;
