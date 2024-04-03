@@ -7,6 +7,8 @@ use App\Models\BannerModel;
 use App\Models\MessagesModel;
 use App\Models\ServicesModel;
 use App\Models\BODMembersModel;
+use App\Models\GalleryModel;
+use App\Models\NewsModel;
 
 class HomeController extends Controller
 {
@@ -14,6 +16,7 @@ class HomeController extends Controller
         $data['heade_title'] = 'Home';
         $data['banners'] = BannerModel::getBanners();
         $data['messages'] = MessagesModel::getMessages();
+        $data['news'] = NewsModel::getNews();
         $data['services'] = ServicesModel::getServices();
         return view('home', $data);
     }//
@@ -58,5 +61,23 @@ class HomeController extends Controller
     public function social_media(){
         $data['heade_title'] = 'Social Media';
         return view('media.social_media', $data);
+    }//
+
+    public function gallery(){
+        $data['heade_title'] = 'Gallery';
+        $data['gallery'] = GalleryModel::getGallery();
+        return view('media.gallery', $data);
+    }//
+
+    public function news_and_updates(){
+        $data['heade_title'] = 'News and Updates';
+        $data['news'] = NewsModel::getNews();
+        return view('media.news_and_updates', $data);
+    }//
+
+    public function news_details($id){
+        $data['heade_title'] = 'News Details';
+        $data['news_details'] = NewsModel::find($id);
+        return view('media.news_details', $data);
     }//
 }

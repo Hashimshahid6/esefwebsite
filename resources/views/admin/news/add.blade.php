@@ -41,6 +41,11 @@
                                     <input type="date" class="form-control" id="date" value="{{old('date')}}" name="date">
                                     <p class="text-danger">{{ $errors->first('date') }}</p>
                                 </div>
+                                <div class="form-group">
+                                    <label>Picture <span class="text-danger">*</span></label>
+                                    <input type="file" class="form-control" id="picture" name="picture">
+                                    <p class="text-danger">{{ $errors->first('picture') }}</p>
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>

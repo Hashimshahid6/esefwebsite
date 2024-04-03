@@ -15,6 +15,6 @@ class NewsModel extends Model
         ->join('users', 'news_updates.created_by', '=', 'users.id')
         ->where('news_updates.status', '=', 1)
         ->orderBy('news_updates.id', 'asc')
-        ->paginate(10);
+        ->get();
     }
 }

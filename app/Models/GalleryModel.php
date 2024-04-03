@@ -15,6 +15,6 @@ class GalleryModel extends Model
         ->join('users', 'gallaries.created_by', '=', 'users.id')
         ->where('gallaries.status', '=', 1)
         ->orderBy('gallaries.id', 'desc')
-        ->paginate(15);
+        ->get();
     }
 }

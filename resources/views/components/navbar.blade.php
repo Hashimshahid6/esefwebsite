@@ -8,26 +8,26 @@
     </div>
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="{{route('home')}}">Home</a></li>
-        <li class="dropdown"><a href="{{route('about')}}"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="{{ Request::is('/') ? 'active' : '' }}"><a class="nav-link scrollto" href="{{route('home')}}">Home</a></li>
+        <li class="dropdown {{ Request::is('about*') ? 'active' : '' }}"><a href="{{route('about')}}"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="{{route('about')}}">Introduction</a></li>
-            <li><a href="{{route('objectives')}}">Objectives</a></li>
-            <li><a href="{{route('bod_members')}}">Board of Directors</a></li>
+            <li><a href="{{route('about')}}" class="{{ Request::is('about') ? 'active' : '' }}">Introduction</a></li>
+            <li><a href="{{route('objectives')}}" class="{{ Request::is('objectives') ? 'active' : '' }}">Objectives</a></li>
+            <li><a href="{{route('bod_members')}}" class="{{ Request::is('bod_members') ? 'active' : '' }}">Board of Directors</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="{{route('schemes')}}"><span>Schemes</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown {{ Request::is('schemes*') ? 'active' : '' }}"><a href="{{route('schemes')}}"><span>Schemes</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="{{route('gcs')}}">Girls Community School (GCS)</a></li>
-            <li><a href="{{route('ess')}}">Education Support Scheme (ESS)</a></li>
-            <li><a href="{{route('nsi')}}">New Schools Initiative (NSI)</a></li>
+            <li><a href="{{route('gcs')}}" class="{{ Request::is('gcs') ? 'active' : '' }}">Girls Community School (GCS)</a></li>
+            <li><a href="{{route('ess')}}" class="{{ Request::is('ess') ? 'active' : '' }}">Education Support Scheme (ESS)</a></li>
+            <li><a href="{{route('nsi')}}" class="{{ Request::is('nsi') ? 'active' : '' }}">New Schools Initiative (NSI)</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="{{route('social_media')}}"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown {{ Request::is('media*') ? 'active' : '' }}"><a href="{{route('social_media')}}"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="{{route('social_media')}}">Social Media</a></li>
-            <li><a href="news_and_updates.html">News & Updates</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="{{route('social_media')}}" class="{{ Request::is('social_media*') ? 'active' : '' }}">Social Media</a></li>
+            <li><a href="{{route('news_and_updates')}}" class="{{ Request::is('news_and_updates*') ? 'active' : '' }}">News & Updates</a></li>
+            <li><a href="{{route('gallery')}}" class="{{ Request::is('gallery*') ? 'active' : '' }}">Gallery</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href=""><span>Downloads</span> <i class="bi bi-chevron-down"></i></a>

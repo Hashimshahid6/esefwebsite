@@ -42,6 +42,12 @@
                                     <p class="text-danger">{{ $errors->first('date') }}</p>
                                 </div>
                                 <div class="form-group">
+                                    <label>Picture</label>
+                                    <input type="file" class="form-control" id="picture" name="picture">
+                                    <p class="text-danger">{{ $errors->first('picture') }}</p>
+                                    <img src="{{asset($news->picture)}}" alt="{{$news->title}}" style="width: 200px; height: 150px;">
+                                </div>
+                                <div class="form-group">
                                     <label>Status</label>
                                     <select class="form-control" name="status" id="status">
                                         <option {{(old('status', $news->status ) == 1) ? 'selected' : ''}} value="1">Active</option>

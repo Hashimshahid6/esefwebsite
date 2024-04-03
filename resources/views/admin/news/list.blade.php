@@ -31,6 +31,7 @@
                       <th>Title</th>
                       <th>Description</th>
                       <th>Date</th>
+                      <th>Picture</th>
                       <th>Created By</th>
                       <th>Status</th>
                       <th>Action</th>
@@ -43,6 +44,7 @@
                       <td> {{$newsupdate->title}} </td>
                       <td> {{$newsupdate->description}} </td>
                       <td> {{$newsupdate->date}} </td>
+                      <td> <img src="{{asset($newsupdate->picture)}}" alt="{{$newsupdate->title}}" style="width: 200px; height: 150px;"> </td>
                       <td> {{$newsupdate->created_by_name}} </td>
                       <td> {{($newsupdate->status == 1) ? 'Active' : 'Inactive'}} </td>
                       <td>
@@ -59,7 +61,6 @@
                     @endforeach
                   </tbody>
                 </table>
-                  {{$news->links()}}
             </div>
           </div>
         </div>

@@ -35,6 +35,9 @@ Route::get('/schemes/ess', [HomeController::class, 'ess'])->name('ess');
 Route::get('/schemes/nsi', [HomeController::class, 'nsi'])->name('nsi');
 
 Route::get('/media/social_media', [HomeController::class, 'social_media'])->name('social_media');
+Route::get('/media/gallery', [HomeController::class, 'gallery'])->name('gallery');
+Route::get('/media/news_and_updates', [HomeController::class, 'news_and_updates'])->name('news_and_updates');
+Route::get('/media/news_details/{id}', [HomeController::class, 'news_details'])->name('news_details');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');

@@ -27,12 +27,23 @@ class NewsController extends Controller
         request()->validate([
             'title' => ['required', 'string', new PlainText],
             'description' => ['required', 'string', new PlainText],
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'date' => 'required|date',
+        ],
+        [
+            'picture.image' => 'The file must be an image (jpeg, png, jpg, gif, svg)',
+            'picture.mimes' => 'The file must be a file of type: jpeg, png, jpg, gif, svg',
+            'picture.max' => 'The file must be less than 2MB',
         ]);
 
         $news = new NewsModel();
         $news->title = trim($request->title);
         $news->description = strip_tags(trim($request->description));
+        if($request->hasFile('picture')){
+            $imageName = time().'.'.$request->picture->extension();  
+            $request->picture->move(public_path('uploads/news_updates'), $imageName);
+            $news->picture = 'uploads/news_updates/'.$imageName;
+        } 
         $news->date = $request->date;
         $news->created_by = Auth()->user()->id;
         $news->save();
@@ -43,11 +54,22 @@ class NewsController extends Controller
         request()->validate([
             'title' => ['required', 'string', new PlainText],
             'description' => ['required', 'string', new PlainText],
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048
             'date' => 'required|date',
+        ],
+        [
+            'picture.image' => 'The file must be an image (jpeg, png, jpg, gif, svg)',
+            'picture.mimes' => 'The file must be a file of type: jpeg, png, jpg, gif, svg',
+            'picture.max' => 'The file must be less than 2MB',
         ]);
         $news = NewsModel::find($id);
         $news->title = trim($request->title);
         $news->description = strip_tags(trim($request->description));
+        if($request->hasFile('picture')){
+            $imageName = time().'.'.$request->picture->extension();  
+            $request->picture->move(public_path('uploads/news_updates'), $imageName);
+            $news->picture = 'uploads/news_updates/'.$imageName;
+        } 
         $news->date = $request->date;
         $news->status = $request->status;
         $news->save();

@@ -57,7 +57,6 @@
                     @endforeach
                   </tbody>
                 </table>
-                  {{$getGallery->links()}}
             </div>
           </div>
         </div>
