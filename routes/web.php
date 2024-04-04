@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\MessagesController;
+use App\Http\Controllers\Admin\TendersController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::get('/media/social_media', [HomeController::class, 'social_media'])->name
 Route::get('/media/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/media/news_and_updates', [HomeController::class, 'news_and_updates'])->name('news_and_updates');
 Route::get('/media/news_details/{id}', [HomeController::class, 'news_details'])->name('news_details');
+
+Route::get('/downloads/tender', [HomeController::class, 'tender'])->name('tender');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');
@@ -100,6 +103,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/messages/edit/{id}', [MessagesController::class, 'edit'])->name('messages.edit');
     Route::post('/admin/messages/edit/{id}', [MessagesController::class, 'update'])->name('messages.update');
     Route::get('/admin/messages/delete/{id}', [MessagesController::class, 'delete'])->name('messages.delete');
+
+    Route::get('/admin/tenders/list', [TendersController::class, 'list'])->name('tenders.list');
+    Route::get('/admin/tenders/add', [TendersController::class, 'add'])->name('tenders.add');
+    Route::post('/admin/tenders/add', [TendersController::class, 'insert'])->name('tenders.insert');
+    Route::get('/admin/tenders/edit/{id}', [TendersController::class, 'edit'])->name('tenders.edit');
+    Route::post('/admin/tenders/edit/{id}', [TendersController::class, 'update'])->name('tenders.update');
+    Route::get('/admin/tenders/delete/{id}', [TendersController::class, 'delete'])->name('tenders.delete');
 });
 
 Route::prefix('perms_roles')->group(function () {

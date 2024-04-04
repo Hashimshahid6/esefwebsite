@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller; 
 use Illuminate\Http\Request;
 use App\Models\NewsModel;
-use App\Models\BannerModel;
 use App\Rules\PlainText;
 
 class NewsController extends Controller

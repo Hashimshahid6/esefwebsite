@@ -9,6 +9,7 @@ use App\Models\ServicesModel;
 use App\Models\BODMembersModel;
 use App\Models\GalleryModel;
 use App\Models\NewsModel;
+use App\Models\TendersModel;
 
 class HomeController extends Controller
 {
@@ -79,5 +80,11 @@ class HomeController extends Controller
         $data['heade_title'] = 'News Details';
         $data['news_details'] = NewsModel::find($id);
         return view('media.news_details', $data);
+    }//
+
+    public function tender(){
+        $data['heade_title'] = 'Tenders';
+        $data['tenders'] = TendersModel::getTenders();
+        return view('downloads.tender', $data);
     }//
 }
