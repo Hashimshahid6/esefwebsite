@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\TendersController;
+use App\Http\Controllers\Admin\ContactsDirectoryController;
+use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +43,8 @@ Route::get('/media/news_and_updates', [HomeController::class, 'news_and_updates'
 Route::get('/media/news_details/{id}', [HomeController::class, 'news_details'])->name('news_details');
 
 Route::get('/downloads/tender', [HomeController::class, 'tender'])->name('tender');
+Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_us');
+Route::post('/contact_us', [HomeController::class, 'insertcontact'])->name('contact_us.insert');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');
@@ -104,12 +108,21 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/admin/messages/edit/{id}', [MessagesController::class, 'update'])->name('messages.update');
     Route::get('/admin/messages/delete/{id}', [MessagesController::class, 'delete'])->name('messages.delete');
 
-    Route::get('/admin/tenders/list', [TendersController::class, 'list'])->name('tenders.list');
-    Route::get('/admin/tenders/add', [TendersController::class, 'add'])->name('tenders.add');
-    Route::post('/admin/tenders/add', [TendersController::class, 'insert'])->name('tenders.insert');
+    Route::get('/admin/tenders/list/{type?}', [TendersController::class, 'list'])->name('tenders.list')->where('type', '[0-9]+');
+    Route::get('/admin/tenders/add/{type?}', [TendersController::class, 'add'])->name('tenders.add')->where('type', '[0-9]+');
+    Route::post('/admin/tenders/insert', [TendersController::class, 'insert'])->name('tenders.insert');
     Route::get('/admin/tenders/edit/{id}', [TendersController::class, 'edit'])->name('tenders.edit');
     Route::post('/admin/tenders/edit/{id}', [TendersController::class, 'update'])->name('tenders.update');
     Route::get('/admin/tenders/delete/{id}', [TendersController::class, 'delete'])->name('tenders.delete');
+
+    Route::get('/admin/contacts_directory/list', [ContactsDirectoryController::class, 'list'])->name('contacts_directory.list');
+    Route::get('/admin/contacts_directory/add', [ContactsDirectoryController::class, 'add'])->name('contacts_directory.add');
+    Route::post('/admin/contacts_directory/add', [ContactsDirectoryController::class, 'insert'])->name('contacts_directory.insert');
+    Route::get('/admin/contacts_directory/edit/{id}', [ContactsDirectoryController::class, 'edit'])->name('contacts_directory.edit');
+    Route::post('/admin/contacts_directory/edit/{id}', [ContactsDirectoryController::class, 'update'])->name('contacts_directory.update');
+    Route::get('/admin/contacts_directory/delete/{id}', [ContactsDirectoryController::class, 'delete'])->name('contacts_directory.delete');
+
+    Route::get('/admin/contact_us/list', [ContactUsController::class, 'list'])->name('contact_us.list');
 });
 
 Route::prefix('perms_roles')->group(function () {

@@ -13,12 +13,20 @@ class TendersController extends Controller
     public function list($type = null){
         $data['tenders'] = TendersModel::getTenders($type);
         $data['header_title'] = 'Tenders List';
+        if($type == 2){
+            $data['header_title'] = 'Proactive Disclosure List';
+        }
+        $data['type'] = $type;
         return view('admin.tenders.list', $data);
     }//
 
-    public function add()
+    public function add($type)
     {
         $data['header_title'] = 'Add Tenders';
+        if($type == 2){
+            $data['header_title'] = 'Add Proactive Disclosure';
+        }
+        $data['type'] = $type;
         return view('admin.tenders.add', $data);
     }//
 
@@ -26,7 +34,7 @@ class TendersController extends Controller
     {
         request()->validate([
             'title' => ['required', 'string', new PlainText],
-            'description' => ['required', 'string', new PlainText],
+            // 'description' => ['required', 'string', new PlainText],
             'attachment' => 'required|mimes:pdf|max:2048',
             'date' => 'required|date',
         ],
@@ -43,9 +51,10 @@ class TendersController extends Controller
             $tenders->attachment = 'uploads/tenders/'.$attachmentName;
         }
         $tenders->date = $request->date;
+        $tenders->type = $request->type;
         $tenders->created_by = Auth()->user()->id;
         $tenders->save();
-        return redirect()->route('tenders.list')->with('success', 'Tenders Created Successfully');
+        return redirect()->route('tenders.list')->with('success', 'Record Created Successfully');
     }//
 
     public function update($id, Request $request){
@@ -69,7 +78,7 @@ class TendersController extends Controller
         $tenders->status = $request->status;
         $tenders->save();
 
-        return redirect()->route('tenders.list')->with('success', 'Tenders Successfully Updated');
+        return redirect()->route('tenders.list')->with('success', 'Record Successfully Updated');
     }//
 
     public function edit($id)
@@ -84,6 +93,6 @@ class TendersController extends Controller
         $tenders = TendersModel::find($id);
         $tenders->status = -1;
         $tenders->save();
-        return redirect()->route('tenders.list')->with('success', 'Tenders Successfully Deleted');
+        return redirect()->route('tenders.list')->with('success', 'Record Successfully Deleted');
     }//
 }

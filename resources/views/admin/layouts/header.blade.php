@@ -117,19 +117,34 @@
                       </a>
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
-                              <a href="{{ route('tenders.list') }}"
+                              <a href="{{ route('tenders.list') }}/1"
                                   class="nav-link @if (Request::segment(2) == 'tenders') active @endif">
                                   <i class="nav-icon fas fa-file"></i>
                                   <p>Tenders</p>
                               </a>
                           </li>
                           <li class="nav-item">
-                            <a href="{{route('proactive_disclosure.list')}}" class="nav-link @if (Request::segment(2) == 'proactive_disclosure') active @endif">
-                                <i class="nav-icon fas fa-file"></i>
-                              <p>Proactive Disclosure</p>
-                            </a>
+                              <a href="{{ route('tenders.list') }}/2"
+                                  class="nav-link @if (Request::segment(2) == 'proactive_disclosure') active @endif">
+                                  <i class="nav-icon fas fa-file"></i>
+                                  <p>Proactive Disclosure</p>
+                              </a>
                           </li>
                       </ul>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('contact_us.list') }}"
+                          class="nav-link @if (Request::segment(2) == 'contact_us') active @endif">
+                          <i class="nav-icon fas fa-image"></i>
+                          <p>Contact Us</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('contacts_directory.list') }}"
+                          class="nav-link @if (Request::segment(2) == 'contacts_directory') active @endif">
+                          <i class="nav-icon fas fa-folder"></i>
+                          <p>Contacts Directory</p>
+                      </a>
                   </li>
                   <li class="nav-item">
                       <a href="{{ route('admin.logout') }}" class="nav-link">

@@ -6,10 +6,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>{{$header_title}}</h1>
+            <h1>Contact List</h1>
           </div>
           <div class="col-sm-6" style="text-align: right">
-            <a href="{{route('tenders.add')}}/{{$type}}" class="btn btn-primary">Add New</a>
+            <a href="{{route('contacts_directory.add')}}" class="btn btn-primary">Add New Contact</a>
           </div>
         </div>
       </div>
@@ -22,38 +22,35 @@
             @include('admin.layouts.messages')
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">{{$header_title}}</h3>
+                <h3 class="card-title">Contacts List</h3>
               </div>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Title</th>
-                      <th>Attachment</th>
-                      <th>Date</th>
+                      <th>Designation</th>
+                      <th>Telephone No</th>
+                      <th>Email</th>
                       <th>Created By</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($tenders as $tender)
+                    @foreach($contactsdirectory as $contacts_data)
                     <tr>
-                      <td> {{$tender->id}} </td>
-                      <td> {{$tender->title}} </td>
-                      <td>
-                        <a href="{{ asset($tender->attachment) }}" target="_blank"><img
-                          src="{{asset('assets/img/pdf.png')}}" width="40" height="40"></a>
-                      </td>
-                      <td> {{$tender->date}} </td>
-                      <td> {{$tender->created_by_name}} </td>
-                      <td> {{($tender->status == 1) ? 'Active' : 'Inactive'}} </td>
+                      <td> {{$contacts_data->id}} </td>
+                      <td> {{$contacts_data->designation}} </td>
+                      <td> {{$contacts_data->telephone_no}} </td>
+                      <td> {{$contacts_data->email}} </td>
+                      <td> {{$contacts_data->created_by_name}} </td>
+                      <td> {{($contacts_data->status == 1) ? 'Active' : 'Inactive'}} </td>
                       <td>
                         <div class="d-flex">
-                          <a href="{{route('tenders.edit', $tender->id)}}" class="btn btn-sm btn-primary">
+                          <a href="{{route('contacts_directory.edit', $contacts_data->id)}}" class="btn btn-sm btn-primary">
                             <i class="fas fa-edit"></i>
                           </a>
-                          <a href="{{route('tenders.delete', $tender->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Tender?');">
+                          <a href="{{route('contacts_directory.delete', $contacts_data->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this BOD Member?');">
                             <i class="fas fa-trash"></i>
                           </a>
                         </div>

@@ -20,7 +20,7 @@
                                         <img height="400px" src="{{ asset($item->picture) }}">
                                         <div class="portfolio-links">
                                             <a href="{{ asset($item->picture) }}" class="portfolio-lightbox"
-                                                title="{{ $item->title }}"><i class="bx bx-plus"></i></a>
+                                                title="{{ $item->title }}"  data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>

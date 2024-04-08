@@ -14,6 +14,6 @@ class BODMembersModel extends Model
         ->join('users', 'bod_members.created_by', '=', 'users.id')
         ->where('bod_members.status', '=', 1)
         ->orderBy('bod_members.id', 'asc')
-        ->paginate(10);
+        ->paginate(20);
     }
 }

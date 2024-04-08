@@ -36,8 +36,9 @@
             <li><a href="#">Proactive Disclosure</a></li>
           </ul>
         </li>
-        <li><a href="#team">Complaint Cell</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="https://www.esef.gkp.pk/poha/" target="_blank">POHA</a></li>
+        {{-- <li><a href="#team">Complaint Cell</a></li> --}}
+        <li><a href="{{route('contact_us')}}">Contact Us</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
