@@ -44,6 +44,10 @@ class MessagesController extends Controller
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/messages'), $imageName);
             $message->picture = 'uploads/messages/'.$imageName;
+            // Delete previous image if it exists
+            if($message->picture && file_exists(public_path($message->picture))){
+                unlink(public_path($message->picture));
+            }
         }
         $message->twitter_link = trim($request->twitter_link);
         $message->facebook_link = trim($request->facebook_link);

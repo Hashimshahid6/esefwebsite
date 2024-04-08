@@ -38,6 +38,10 @@ class SlidersController extends Controller
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/sliders'), $imageName);
             $slider->picture = 'uploads/sliders/'.$imageName;
+            // Delete previous image if it exists
+            if($slider->picture && file_exists(public_path($slider->picture))){
+                unlink(public_path($slider->picture));
+            }
         }
         $slider->created_by = Auth()->user()->id;
         $slider->save();

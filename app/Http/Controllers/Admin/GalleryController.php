@@ -55,6 +55,10 @@ class GalleryController extends Controller
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/gallery'), $imageName);
             $gallery->picture = 'uploads/gallery/'.$imageName;
+            // Delete previous image if it exists
+            if($gallery->picture && file_exists(public_path($gallery->picture))){
+                unlink(public_path($gallery->picture));
+            }
         }
         $gallery->status = $request->status;
         $gallery->save();

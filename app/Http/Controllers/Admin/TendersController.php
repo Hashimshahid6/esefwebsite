@@ -73,6 +73,10 @@ class TendersController extends Controller
             $attachmentName = time().'.'.$request->attachment->extension();  
             $request->attachment->move(public_path('uploads/tenders'), $attachmentName);
             $tenders->attachment = 'uploads/tenders/'.$attachmentName;
+            // Delete previous image if it exists
+            if($tenders->attachment && file_exists(public_path($tenders->attachment))){
+                unlink(public_path($tenders->attachment));
+            }
         }
         $tenders->date = $request->date;
         $tenders->status = $request->status;

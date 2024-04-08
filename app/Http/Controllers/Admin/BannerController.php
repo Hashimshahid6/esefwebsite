@@ -59,6 +59,10 @@ class BannerController extends Controller
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/banners'), $imageName);
             $banner->picture = 'uploads/banners/'.$imageName;
+            // Delete previous image if it exists
+            if($banner->picture && file_exists(public_path($banner->picture))){
+            unlink(public_path($banner->picture));
+            }
         }
         $banner->status = $request->status;
         $banner->save();

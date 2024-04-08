@@ -38,6 +38,10 @@ class ServicesController extends Controller
             $imageName = time().'.'.$request->icon->extension();  
             $request->icon->move(public_path('uploads/services'), $imageName);
             $service->icon = 'uploads/services/'.$imageName;
+            // Delete previous image if it exists
+            if($service->icon && file_exists(public_path($service->icon))){
+                unlink(public_path($service->icon));
+            }
         }
         $service->created_by = Auth()->user()->id;
         $service->save();

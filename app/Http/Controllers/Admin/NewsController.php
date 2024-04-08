@@ -68,6 +68,10 @@ class NewsController extends Controller
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/news_updates'), $imageName);
             $news->picture = 'uploads/news_updates/'.$imageName;
+            // Delete previous image if it exists
+            if($news->picture && file_exists(public_path($news->picture))){
+                unlink(public_path($news->picture));
+            }
         } 
         $news->date = $request->date;
         $news->status = $request->status;

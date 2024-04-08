@@ -66,6 +66,10 @@ class BODMembersController extends Controller
             $imageName = time().'.'.$request->member_picture->extension();  
             $request->member_picture->move(public_path('uploads/bod_members'), $imageName);
             $bodmember->member_picture = 'uploads/bod_members/'.$imageName;
+            // Delete previous image if it exists
+            if($bodmember->member_picture && file_exists(public_path($bodmember->member_picture))){
+                unlink(public_path($bodmember->member_picture));
+            }
         }
         $bodmember->picture_sequence = trim($request->picture_sequence);
         $bodmember->status = $request->status;
