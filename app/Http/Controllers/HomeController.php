@@ -79,10 +79,10 @@ class HomeController extends Controller
         return view('media.news_and_updates', $data);
     }//
 
-    public function news_details($id){
-        $data['headeR_title'] = 'News Details';
-        $data['news_details'] = NewsModel::find($id);
-        return view('media.news_details', $data);
+    public function news_detail($slug){
+        $data['header_title'] = 'News Details';
+        $data['news_detail'] = NewsModel::where('slug', $slug)->first();
+        return view('media.news_detail', $data);
     }//
 
     public function tender(){

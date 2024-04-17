@@ -1,6 +1,7 @@
 <!-- ======= News Section ======= -->
 @if ($news->count() > 0)
     <section id="testimonials" class="testimonials section-bg">
+        <br><br>
         <div class="section-title" data-aos="fade-in" data-aos-delay="100">
             <h2>Latest News & Updates</h2>
         </div>
@@ -12,7 +13,8 @@
                             <div class="testimonial-item">
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    {{ $item->description }}
+                                    {!! Str::words($item->description, 50, '...') !!}
+                                    <a href="{{url('/media/news_detail/'. $item->slug)}}">See more</a>
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                                 <h4>{{ $item->date }}</h4>

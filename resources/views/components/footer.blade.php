@@ -26,18 +26,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-4 footer-links">
-
                     <ul>
                         <li>
                             <h4>Our Services</h4>
                         </li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('gcs')}}">Girls Community Schools</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('ess')}}">Education Support Scheme</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('nsi')}}">New Schools Intiative</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('tender')}}">Downloads</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('gcs') }}">Girls Community
+                                Schools</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('ess') }}">Education Support
+                                Scheme</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nsi') }}">New Schools Intiative</a>
+                        </li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('tender') }}">Downloads</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('contact_us')}}">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -50,8 +51,8 @@
                                 target="_blank">Apply For GCS</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a
                                 href="https://www.esef.gkp.pk/ess-apply"target="_blank">Apply For ESS</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a
-                                href="https://www.esef.gkp.pk/nsi/apply" target="_blank">Apply For NSI</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://www.esef.gkp.pk/nsi/apply"
+                                target="_blank">Apply For NSI</a></li>
                         <li style="line-height:4px;"><i class="bx bx-chevron-right"></i> <a
                                 href="https://kpese.gov.pk/">Elementary & Secondary Education Department</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="https://www.sef.org.pk/">Sindh Education
@@ -69,10 +70,12 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <p>Designed & Developed by <a href="https://www.etechnocraft.com/" target="_blank">eTechnoCraft</a></p>
-            </div>
+        <div class="copyright">
+            &copy; Copyright (2022)<strong><span>Elementary & Secondary Education Foundation, Govt. of Khyber
+                    Pakhtunkhwa</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="#">eGMC</a>
         </div>
     </div>
 </footer><!-- End Footer -->

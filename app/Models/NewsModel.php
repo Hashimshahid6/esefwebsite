@@ -14,7 +14,7 @@ class NewsModel extends Model
         return self::select('news_updates.*', 'users.name as created_by_name')
         ->join('users', 'news_updates.created_by', '=', 'users.id')
         ->where('news_updates.status', '=', 1)
-        ->orderBy('news_updates.id', 'asc')
+        ->orderBy('news_updates.id', 'desc')
         ->get();
     }
 }

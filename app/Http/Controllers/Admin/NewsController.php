@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\NewsModel;
 use App\Rules\PlainText;
+use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
@@ -37,6 +38,7 @@ class NewsController extends Controller
 
         $news = new NewsModel();
         $news->title = trim($request->title);
+        $news->slug = str_slug($request->title);
         $news->description = strip_tags(trim($request->description));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
@@ -52,7 +54,7 @@ class NewsController extends Controller
     public function update($id, Request $request){
         request()->validate([
             'title' => ['required', 'string', new PlainText],
-            'description' => ['required', 'string', new PlainText],
+            'description' => 'required', 'string',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048
             'date' => 'required|date',
         ],
@@ -63,7 +65,8 @@ class NewsController extends Controller
         ]);
         $news = NewsModel::find($id);
         $news->title = trim($request->title);
-        $news->description = strip_tags(trim($request->description));
+        $news->slug = Str::slug($request->title, '-');
+        $news->description = strip_tags(stripslashes(trim($request->description)));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
             $request->picture->move(public_path('uploads/news_updates'), $imageName);

@@ -29,6 +29,7 @@
                     <tr>
                       <th>#</th>
                       <th>Title</th>
+                      <th>Slug</th>
                       <th>Description</th>
                       <th>Date</th>
                       <th>Picture</th>
@@ -42,7 +43,8 @@
                     <tr>
                       <td> {{$newsupdate->id}} </td>
                       <td> {{$newsupdate->title}} </td>
-                      <td> {{$newsupdate->description}} </td>
+                      <td> {{$newsupdate->slug}} </td>
+                      <td> {!! $newsupdate->description !!} </td>
                       <td> {{$newsupdate->date}} </td>
                       <td> <img src="{{asset($newsupdate->picture)}}" alt="{{$newsupdate->title}}" style="width: 200px; height: 150px;"> </td>
                       <td> {{$newsupdate->created_by_name}} </td>

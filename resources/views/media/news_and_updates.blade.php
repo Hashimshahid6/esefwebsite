@@ -5,7 +5,6 @@
     @include('components.navbar')
     <main id="main">
         @include('components.news')
-
         {{-- News list --}}
         <section id="testimonials" class="testimonials">
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
@@ -24,7 +23,7 @@
                             @foreach ($news as $item)
                             <tr>
                                 <td>{{$item->date}}</td>
-                                <td>{{$item->title}}</td>
+                                <td><a href="{{url('/media/news_detail/'. $item->slug)}}">{{$item->title}}</a></td>
                             </tr>
                             @endforeach
                         </tbody>
