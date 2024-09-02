@@ -46,6 +46,8 @@ Route::get('/downloads/tender', [HomeController::class, 'tender'])->name('tender
 Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_us');
 Route::post('/contact_us', [HomeController::class, 'insertcontact'])->name('contact_us.insert');
 
+Route::get('/nfe', [HomeController::class, 'nfe'])->name('nfe');
+
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');

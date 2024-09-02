@@ -11,7 +11,13 @@
                     @foreach ($news->take(5) as $item)
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <p>
+                                {{-- @php
+                                echo "<pre>";
+                                    print_r($item->picture);
+                                    echo "</pre>";
+                                    @endphp --}}
+                                    <p>
+                                    <img src="{{asset($item->picture)}}" alt="{{$item->title}}"  class="mb-2" style="width: 100%; height: 250px;">
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                     {!! Str::words($item->description, 50, '...') !!}
                                     <a href="{{url('/media/news_detail/'. $item->slug)}}">See more</a>

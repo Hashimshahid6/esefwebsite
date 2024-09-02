@@ -116,4 +116,9 @@ class HomeController extends Controller
         $contactus->save();
         return redirect()->back()->with('success', 'Message sent successfully');
     }//
+
+    public function nfe(){
+        $data['header_title'] = 'NFE';
+        return view('nfe', $data);
+    }//
 }

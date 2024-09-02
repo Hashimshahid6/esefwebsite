@@ -38,7 +38,7 @@ class NewsController extends Controller
 
         $news = new NewsModel();
         $news->title = trim($request->title);
-        $news->slug = str_slug($request->title);
+        $news->slug = Str::slug($request->title);
         $news->description = strip_tags(trim($request->description));
         if($request->hasFile('picture')){
             $imageName = time().'.'.$request->picture->extension();  
