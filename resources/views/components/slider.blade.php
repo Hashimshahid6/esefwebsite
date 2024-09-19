@@ -15,7 +15,7 @@
                 <!-- Slide Image Start -->
                 @foreach($banners as $key => $banner)
                     <div class="slide {{ $key == 0 ? 'first' : ''}}">
-                        <img src="{{ url('/' . $banner->picture)}}" alt=""  width= "100%" height="80vh">
+                        <img src="{{ url('/' . $banner->picture)}}" alt="">
                         <div class="bannertext"><h1 style="margin-top: 50px;">{{$banner->title}}</h1>
                             <h2>{!! $banner->description !!}</h2>
                         </div>
@@ -35,12 +35,12 @@
             <!-- Automatic Navigation Close -->
         </div>
         <!-- Mannual Navigation Start -->
-        <div class="navigation-mannual">
+        {{-- <div class="navigation-mannual">
             <label for="radio1" class="mannual-btn"></label>
             <label for="radio2" class="mannual-btn"></label>
             <label for="radio3" class="mannual-btn"></label>
             <label for="radio4" class="mannual-btn"></label>
-        </div> 
+        </div>  --}}
         <!-- Mannual Navigation Close -->
     </div>
     <!-- Image Slider Close -->

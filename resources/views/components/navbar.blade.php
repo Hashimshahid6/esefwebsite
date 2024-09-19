@@ -16,6 +16,7 @@
             <li><a href="{{route('bod_members')}}">Board of Directors</a></li>
           </ul>
         </li>
+        <li><a href="{{route('success-stories')}}">Success Stories</a></li>
         <li><a href="{{route('nfe')}}">NFE</a></li>
         <li class="dropdown {{ Request::is('schemes*') ? 'active' : '' }}"><a href="{{route('schemes')}}"><span>Schemes</span> <i class="bi bi-chevron-down"></i></a>
           <ul>

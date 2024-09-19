@@ -13,6 +13,7 @@ use App\Models\TendersModel;
 use App\Models\ContactsDirectoryModel;
 use App\Models\ContactUsModel;
 use App\Rules\PlainText;
+use App\Models\SuccessStoriesModel;
 
 class HomeController extends Controller
 {
@@ -120,5 +121,11 @@ class HomeController extends Controller
     public function nfe(){
         $data['header_title'] = 'NFE';
         return view('nfe', $data);
+    }//
+
+    public function success_stories(){
+        $data['header_title'] = 'Success Stories';
+        $data['success_stories'] = SuccessStoriesModel::getSuccessStories();
+        return view('success-stories', $data);
     }//
 }

@@ -6,7 +6,7 @@
   <!-- ======= Hero Section ======= -->
   @include('components.slider')
   <!-- End Hero -->
-  <main id="main">
+  <main>
     <!-- ======= About Section ======= -->
     @include('components.who_we_are')
     <!-- End About Section -->

@@ -17,7 +17,7 @@
                             @foreach ($gallery as $item)
                                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                                     <div class="portfolio-wrap">
-                                        <img height="400px" src="{{ asset($item->picture) }}">
+                                        <img height="300px" width="100%" src="{{ asset($item->picture) }}" style="object-fit: cover;">
                                         <div class="portfolio-links">
                                             <a href="{{ asset($item->picture) }}" class="portfolio-lightbox"
                                                 title="{{ $item->title }}"  data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\TendersController;
 use App\Http\Controllers\Admin\ContactsDirectoryController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SuccessStoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +48,7 @@ Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_
 Route::post('/contact_us', [HomeController::class, 'insertcontact'])->name('contact_us.insert');
 
 Route::get('/nfe', [HomeController::class, 'nfe'])->name('nfe');
+Route::get('/success_stories', [HomeController::class, 'success_stories'])->name('success-stories');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('authenticate');

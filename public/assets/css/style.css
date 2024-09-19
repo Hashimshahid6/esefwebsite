@@ -458,7 +458,7 @@ h6 {
   position: absolute;
   left: 0;
   right: 0;
-  top: 65%;
+  top: 50%;
   transform: translate(0,-50%);
 
   margin-left: auto;
@@ -471,21 +471,17 @@ h6 {
   position: absolute;
   left: 0;
   right: 0;
-  top: 85%;
+  top: 70%;
   transform: translate(0,-50%);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
  
 }
-
-
-
-
 .slider{
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
   align-items: center;
 
@@ -526,7 +522,7 @@ h6 {
 .slide img{
 
   width: 100%;
-  height: 100vh;
+  height: 80vh;
  
 }
 
