@@ -25,8 +25,8 @@ class NewsController extends Controller
     public function insert(Request $request)
     {
         request()->validate([
-            'title' => ['required', 'string', new PlainText],
-            'description' => ['required', 'string', new PlainText],
+            'title' => 'required', 'string',
+            'description' => 'required | string',
             'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'date' => 'required|date',
         ],
@@ -53,7 +53,7 @@ class NewsController extends Controller
 
     public function update($id, Request $request){
         request()->validate([
-            'title' => ['required', 'string', new PlainText],
+            'title' => 'required', 'string',
             'description' => 'required', 'string',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048
             'date' => 'required|date',

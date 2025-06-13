@@ -43,7 +43,7 @@
                       <td> {{$tender->title}} </td>
                       <td>
                         <a href="{{ asset($tender->attachment) }}" target="_blank"><img
-                          src="{{asset('assets/img/pdf.png')}}" width="40" height="40"></a>
+                          src="{{url('public/assets/img/pdf.png')}}" width="40" height="40"></a>
                       </td>
                       <td> {{$tender->date}} </td>
                       <td> {{$tender->created_by_name}} </td>

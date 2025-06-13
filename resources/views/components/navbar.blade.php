@@ -4,7 +4,7 @@
     <div class="logo">
       <h1 class="text-light"><a href="{{route('home')}}"><span></span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="{{route('home')}}"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>
+      <a href="{{route('home')}}"><img src="{{url('public/assets/img/logo.png')}}" alt="" class="img-fluid"></a>
     </div>
     <nav id="navbar" class="navbar">
       <ul>
@@ -17,12 +17,18 @@
           </ul>
         </li>
         <li><a href="{{route('success-stories')}}">Success Stories</a></li>
-        <li><a href="{{route('nfe')}}">NFE</a></li>
+        <li class="dropdown {{ Request::is('nfe*') ? 'active' : '' }}"><a href="javascript:void(0);"><span>NFE</span><i class="bi bi-chevron-down"></i></a>
+					<ul>
+            <li><a href="{{route('nfe')}}">NFE</a></li>
+            <li><a href="{{route('nfealp')}}">NFE ALP</a></li>
+          </ul>
+				</li>
         <li class="dropdown {{ Request::is('schemes*') ? 'active' : '' }}"><a href="{{route('schemes')}}"><span>Schemes</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="{{route('gcs')}}">Girls Community School (GCS)</a></li>
             <li><a href="{{route('ess')}}">Education Support Scheme (ESS)</a></li>
             <li><a href="{{route('nsi')}}">New Schools Initiative (NSI)</a></li>
+            <li><a href="{{route('alp')}}">Accelerated Learning Pathway (ALP)</a></li>
           </ul>
         </li>
         <li class="dropdown {{ Request::is('media*') ? 'active' : '' }}"><a href="{{route('social_media')}}"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
@@ -36,6 +42,7 @@
           <ul>
             <li><a href="{{route('tender')}}">Tender</a></li>
             <li><a href="#">Proactive Disclosure</a></li>
+            <li><a href="{{route('downloads_nfe')}}">NFE ALP</a></li>
           </ul>
         </li>
         <li><a href="https://www.esef.gkp.pk/poha/" target="_blank">POHA</a></li>

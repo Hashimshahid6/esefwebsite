@@ -38,7 +38,7 @@
                                             </td>
                                             <td style="text-align:center;">
                                                 <a href="{{ asset($tender->attachment) }}" target="_blank"><img
-                                                        src="{{asset('assets/img/pdf.png')}}" width="40" height="40"></a>
+                                                        src="{{url('public/assets/img/pdf.png')}}" width="40" height="40"></a>
                                             </td>
                                         </tr>
                                     @endforeach

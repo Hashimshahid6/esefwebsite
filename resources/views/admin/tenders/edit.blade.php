@@ -36,7 +36,7 @@
                                     <input type="file" class="form-control" id="attachment" name="attachment">
                                     <p class="text-danger">{{ $errors->first('attachment') }}</p>
                                     <a href="{{ asset($tenders->attachment) }}" target="_blank"><img
-                                        src="{{asset('assets/img/pdf.png')}}" width="40" height="40"></a>
+                                        src="{{url('public/assets/img/pdf.png')}}" width="40" height="40"></a>
                                 </div>
                                 <div class="form-group">
                                     <label>Date <span class="text-danger">*</span></label>

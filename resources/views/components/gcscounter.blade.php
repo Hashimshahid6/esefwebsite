@@ -44,7 +44,7 @@
     </div>
   </div>
 </section><!-- End Counts Section -->
-<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{url('public/assets/js/jquery.min.js')}}"></script>
 <script type="text/javascript">
   $.ajax({
     url: 'https://www.esef.gkp.pk/gcs/api/get_data/statistics_for_website',

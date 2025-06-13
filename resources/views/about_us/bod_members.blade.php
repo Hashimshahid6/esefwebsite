@@ -32,8 +32,14 @@
                                 </div>
                             </div>
                             <div class="row">
+															@php
+															$counter = 0;
+															@endphp
                                 @foreach($bodMembers as $index => $bodMember)
                                     @if(!$index == 0)
+																				<div class="col-12 col-md-6 col-lg-1 align-center d-flex text-center">
+																					&nbsp;
+																				</div>
                                         <div class="col-12 col-md-6 col-lg-4 align-center d-flex text-center">
                                             <div class="card">
                                                 <img class="card-img-top" src="{{ asset($bodMember->member_picture) }}" alt="{{$bodMember->member_name}}">
@@ -43,8 +49,18 @@
                                                     <p class="card-text">{!! $bodMember->member_details !!}</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>	
+																				<div class="col-12 col-md-6 col-lg-1 align-center d-flex text-center">
+																					&nbsp;
+																				</div>																			
                                     @endif
+																				@php
+																				$counter++;
+																				if($counter %2 != 0){
+																					echo '</div><div class="row">';
+																					$counter = 1;
+																				}
+																				@endphp
                                 @endforeach
                             </div>
                         </div>

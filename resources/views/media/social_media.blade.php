@@ -16,7 +16,7 @@
                     <div class="col-lg-3 col-md-4">
                         <div class="icon-box text-center">
                             <h3>
-                                <a href="https://www.facebook.com/esefkpk/"><img src="{{asset('assets/img/fb.png')}}" width="150px" height="150px" alt="">
+                                <a href="https://www.facebook.com/esefkpk/"><img src="{{url('public/assets/img/fb.png')}}" width="150px" height="150px" alt="">
                                 </a>
                             </h3>
                             <br>
@@ -26,7 +26,7 @@
                     <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
                         <div class="icon-box text-center">
                             <h3>
-                                <a href="https://www.instagram.com/esefkpk/"><img src="{{asset('assets/img/insta.png')}}" width="150px" height="150px" alt="">
+                                <a href="https://www.instagram.com/esef.kpk/"><img src="{{url('public/assets/img/insta.png')}}" width="150px" height="150px" alt="">
                                 </a>
                             </h3>
                             <br>
@@ -37,7 +37,7 @@
                         <div class="icon-box text-center">
                             <h3>
                                 <a href="https://youtube.com/channel/UCtd5nQpAiRk7-BBpr0n8_og">
-                                    <img src="{{asset('assets/img/youtube.png')}}" width="150px" height="150px" alt="">
+                                    <img src="{{url('public/assets/img/youtube.png')}}" width="150px" height="150px" alt="">
                                 </a>
                             </h3>
                             <br>
@@ -48,7 +48,7 @@
                         <div class="icon-box text-center">
                             <h3>
                                 <a href="https://www.twitter.com/esefkpk/">
-                                    <img src="{{asset('assets/img/twitter.png')}}" width="150px" height="150px" alt="">
+                                    <img src="{{url('public/assets/img/twitter.png')}}" width="150px" height="150px" alt="">
                                 </a>
                             </h3>
                             <br>

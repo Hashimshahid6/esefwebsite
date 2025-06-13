@@ -8,12 +8,12 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{asset('assets/admin/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{url('public/assets/admin/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('assets/admin/dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/admin/plugins/summernote/summernote-bs4.min.css')}}">
+  <link rel="stylesheet" href="{{url('public/assets/admin/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{url('public/assets/admin/plugins/summernote/summernote-bs4.min.css')}}">
 </head>
 <!--
 `body` tag options:
@@ -35,19 +35,19 @@
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="{{asset('assets/admin/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{url('public/assets/admin/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="{{asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url('public/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE -->
-<script src="{{asset('assets/admin/dist/js/adminlte.js')}}"></script>
+<script src="{{url('public/assets/admin/dist/js/adminlte.js')}}"></script>
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="{{asset('assets/admin/plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{url('public/assets/admin/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('assets/admin/dist/js/demo.js')}}"></script>
+<script src="{{url('public/assets/admin/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('assets/admin/dist/js/pages/dashboard3.js')}}"></script>
-<script src="{{asset('assets/admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{url('public/assets/admin/dist/js/pages/dashboard3.js')}}"></script>
+<script src="{{url('public/assets/admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script>
     $(function () {
         $('.editor').summernote({

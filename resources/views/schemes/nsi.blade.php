@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="content col-xl-6" data-aos="fade-up">
-                    <img src="{{asset('assets/img/nsi/nsi.png')}}" style="width: 700px; height: 90%;"/>
+                    <img src="{{url('public/assets/img/nsi/nsi.png')}}" style="width: 700px; height: 90%;"/>
                     <!-- End .content-->
                 </div>
                 </div>

@@ -6,12 +6,14 @@
         <!-- Image Slider Start -->
         <div class="slider">
             <div class="slides">
+                @foreach($banners as $key => $banner)
                 <!-- Radio Button Start  -->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio<?php echo $key+1 ?>">
+                <!-- <input type="radio" name="radio-btn" id="radio2">
                 <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4"> 
+                <input type="radio" name="radio-btn" id="radio4">  -->
                 <!-- Radio Button Close  -->
+								@endforeach
                 <!-- Slide Image Start -->
                 @foreach($banners as $key => $banner)
                     <div class="slide {{ $key == 0 ? 'first' : ''}}">
@@ -27,10 +29,12 @@
                 <!-- Slide Image Close -->
                 <!-- Automatic Navigation Start -->
                 <div class="navigation-auto">
-                <div class="auto-btn-1"></div>
-                <div class="auto-btn-2"></div>
+								@foreach($banners as $key => $banner)	
+                <div class="auto-btn-<?php echo $key+1 ?>"></div>
+								@endforeach
+                <!-- <div class="auto-btn-2"></div>
                 <div class="auto-btn-3"></div>
-                <div class="auto-btn-4"></div>
+                <div class="auto-btn-4"></div> -->
             </div>
             <!-- Automatic Navigation Close -->
         </div>
@@ -46,10 +50,11 @@
     <!-- Image Slider Close -->
     <script>
     var counter = 1;
+		var banners_count = <?php echo count($banners) ?>;
     setInterval(function()  {
     document.getElementById('radio'+ counter).checked = true;
     counter++; 
-    if(counter>4){
+    if(counter>banners_count+1){
     counter=1
     }
     }, 5000);

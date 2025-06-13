@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="content col-xl-6" data-aos="fade-up">
-                    <img src="{{asset('assets/img/gcs/gcs_intro.jpeg')}}" height="50%" width="100%"/>
+                    <img src="{{url('public/assets/img/gcs/gcs_intro.jpeg')}}" height="50%" width="100%"/>
                     <!-- End .content-->
                 </div>
                 </div>

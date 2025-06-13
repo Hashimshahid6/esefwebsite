@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BODMembersController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ServicesController;
+use App\Http\Controllers\Admin\NfeAlpController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\TendersController;
@@ -37,6 +38,7 @@ Route::get('/schemes', [HomeController::class, 'schemes'])->name('schemes');
 Route::get('/schemes/gcs', [HomeController::class, 'gcs'])->name('gcs');
 Route::get('/schemes/ess', [HomeController::class, 'ess'])->name('ess');
 Route::get('/schemes/nsi', [HomeController::class, 'nsi'])->name('nsi');
+Route::get('/schemes/alp', [HomeController::class, 'scheme_alp'])->name('alp');
 
 Route::get('/media/social_media', [HomeController::class, 'social_media'])->name('social_media');
 Route::get('/media/gallery', [HomeController::class, 'gallery'])->name('gallery');
@@ -44,10 +46,12 @@ Route::get('/media/news_and_updates', [HomeController::class, 'news_and_updates'
 Route::get('/media/news_detail/{slug}', [HomeController::class, 'news_detail'])->name('news_detail')->where('slug', '[a-zA-Z0-9-]+');
 
 Route::get('/downloads/tender', [HomeController::class, 'tender'])->name('tender');
+Route::get('/downloads/nfealp', [HomeController::class, 'downloads_nfe'])->name('downloads_nfe');
 Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_us');
 Route::post('/contact_us', [HomeController::class, 'insertcontact'])->name('contact_us.insert');
 
 Route::get('/nfe', [HomeController::class, 'nfe'])->name('nfe');
+Route::get('/nfealp', [HomeController::class, 'nfealp'])->name('nfealp');
 Route::get('/success_stories', [HomeController::class, 'success_stories'])->name('success-stories');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
@@ -97,6 +101,14 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/services/edit/{id}', [ServicesController::class, 'edit'])->name('services.edit');
     Route::post('/admin/services/edit/{id}', [ServicesController::class, 'update'])->name('services.update');
     Route::get('/admin/services/delete/{id}', [ServicesController::class, 'delete'])->name('services.delete');
+    
+		Route::get('/admin/nfealp/list', [NfeAlpController::class, 'list'])->name('nfealp.list');
+		Route::get('/admin/nfealp/list/{id}', [NfeAlpController::class, 'list'])->name('nfealp.listdocs');
+    Route::get('/admin/nfealp/add', [NfeAlpController::class, 'add'])->name('nfealp.add');
+    Route::post('/admin/nfealp/add', [NfeAlpController::class, 'insert'])->name('nfealp.insert');
+    Route::post('/admin/nfealp/getChildrenOnly', [NfeAlpController::class, 'getChildrenOnly']);
+		Route::get('/admin/nfealp/edit/{id}', [NfeAlpController::class, 'edit'])->name('nfealp.edit');
+    Route::post('/admin/nfealp/edit/{id}', [NfeAlpController::class, 'update'])->name('nfealp.update');
 
     Route::get('/admin/news/list', [NewsController::class, 'list'])->name('news.list');
     Route::get('/admin/news/add', [NewsController::class, 'add'])->name('news.add');

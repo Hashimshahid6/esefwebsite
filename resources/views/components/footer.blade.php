@@ -15,10 +15,10 @@
                             <strong>Email:</strong> info@eef.org.pk<br>
                         </p>
                         <div class="social-links mt-3">
-                            <a href="https://twitter.com/esefkpk" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="https://www.facebook.com/esefkpk" class="facebook"><i
+                            <a href="https://twitter.com/esefkpk" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://www.facebook.com/esefkpk" target="_blank" class="facebook"><i
                                     class="bx bxl-facebook"></i></a>
-                            <a href="https://www.instagram.com/esefkpk/" class="instagram"><i
+                            <a href="https://www.instagram.com/esefkpk/" target="_blank" class="instagram"><i
                                     class="bx bxl-instagram"></i></a>
                             <a href="https://youtube.com/channel/UCtd5nQpAiRk7-BBpr0n8_og" class="youtube"><i
                                     class="bx bxl-youtube"></i></a>
@@ -31,14 +31,14 @@
                         <li>
                             <h4>Our Services</h4>
                         </li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('gcs') }}">Girls Community
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('gcs') }}" target="_blank">Girls Community
                                 Schools</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('ess') }}">Education Support
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('ess') }}" target="_blank">Education Support
                                 Scheme</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nsi') }}">New Schools Intiative</a>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nsi') }}" target="_blank">New Schools Intiative</a>
                         </li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('tender') }}">Downloads</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('contact_us')}}">Contact Us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('tender') }}" target="_blank">Downloads</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('contact_us')}}" target="_blank">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -54,16 +54,18 @@
                         <li><i class="bx bx-chevron-right"></i> <a href="https://www.esef.gkp.pk/nsi/apply"
                                 target="_blank">Apply For NSI</a></li>
                         <li style="line-height:4px;"><i class="bx bx-chevron-right"></i> <a
-                                href="https://kpese.gov.pk/">Elementary & Secondary Education Department</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="https://www.sef.org.pk/">Sindh Education
+                                href="https://kpese.gov.pk/" target="_blank">Elementary & Secondary Education Department</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://www.sef.org.pk/" target="_blank">Sindh Education
                                 Foundation</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="http://www.pef.edu.pk/">Punjab Education
+                        <li><i class="bx bx-chevron-right"></i> <a href="http://www.pef.edu.pk/" target="_blank">Punjab Education
                                 Foundation</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="https://hed.gkp.pk/">Higher Education
+												<li><i class="bx bx-chevron-right"></i> <a href="http://www.bef.org.pk/" target="_blank">Balochistan Education
+												Foundation</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://hed.gkp.pk/" target="_blank">Higher Education
                                 Department</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="http://175.107.63.45/newimusite/">Education
+                        <li><i class="bx bx-chevron-right"></i> <a href="http://175.107.63.45/newimusite/" target="_blank">Education
                                 Monitoring Authority</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="https://etea.edu.pk/">ETEA</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://etea.edu.pk/" target="_blank">ETEA</a></li>
                     </ul>
                 </div>
             </div>

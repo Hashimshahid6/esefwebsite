@@ -10,6 +10,7 @@ use App\Models\BODMembersModel;
 use App\Models\GalleryModel;
 use App\Models\NewsModel;
 use App\Models\TendersModel;
+use App\Models\NfeAlpModel;
 use App\Models\ContactsDirectoryModel;
 use App\Models\ContactUsModel;
 use App\Rules\PlainText;
@@ -62,6 +63,11 @@ class HomeController extends Controller
         $data['header_title'] = 'NSI';
         return view('schemes.nsi', $data);
     }//
+    
+		public function scheme_alp(){
+        $data['header_title'] = 'ALP';
+        return view('schemes.alp', $data);
+    }//
 
     public function social_media(){
         $data['header_title'] = 'Social Media';
@@ -91,6 +97,12 @@ class HomeController extends Controller
         $data['tenders'] = TendersModel::getTenders();
         return view('downloads.tender', $data);
     }//
+    
+		public function downloads_nfe(){
+        $data['header_title'] = 'NFE ALP';
+        $data['list'] = NfeAlpModel::getParents();
+        return view('downloads.nfe', $data);
+    }//
 
     public function contact_us(){
         $data['header_title'] = 'Contact Us';
@@ -115,12 +127,20 @@ class HomeController extends Controller
         $contactus->subject = strip_tags(trim($request->subject));
         $contactus->message = strip_tags(trim($request->message));
         $contactus->save();
-        return redirect()->back()->with('success', 'Message sent successfully');
+        return redirect()->back()->with('success', 'Your message has been sent successfully. Our team will respond you as soon as possible.');
     }//
 
     public function nfe(){
         $data['header_title'] = 'NFE';
         return view('nfe', $data);
+    }//
+
+		public function nfealp(){
+        $data['header_title'] = 'NFE ALP';
+				$data['descriptionrow'] = NfeAlpModel::getDescriptionRow();
+				$data['list'] = NfeAlpModel::getParents();
+				// dd($data);
+				return view('nfealp', $data);
     }//
 
     public function success_stories(){

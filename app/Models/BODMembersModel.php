@@ -13,7 +13,7 @@ class BODMembersModel extends Model
         return self::select('bod_members.*', 'users.name as created_by_name')
         ->join('users', 'bod_members.created_by', '=', 'users.id')
         ->where('bod_members.status', '=', 1)
-        ->orderBy('bod_members.id', 'asc')
+        ->orderBy('bod_members.picture_sequence', 'asc')
         ->paginate(20);
     }
 }
